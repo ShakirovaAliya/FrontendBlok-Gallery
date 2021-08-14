@@ -1,29 +1,30 @@
 <template>
-    <div class="container">
-        <Header />
-
-        <router-view />
-    </div>
+  <div id="app">
+    <Todo />
+  </div>
 </template>
 
-<script lang="ts">
-import Header from "./components/Header.vue"
-import PageAll from "./views/PageAll.vue"
-import PageSaved from "./views/PageSaved.vue"
+<script>
+import Todo from "./components/Gallery.vue";
 
 export default {
-    name: 'PageAdmin',
-    components: {Header, PageAll, PageSaved},
-    watch: {
-        $route: {
-            immedite: true,
-            handler(to, from) {
-                document.title = to.meta.title || "Gallery"
-
-            }
-
-        }
-    }
-}
-
+  name: "App",
+  components: {
+    Todo,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
